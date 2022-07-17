@@ -8,8 +8,8 @@ app.use(express.json());
 // static files with express
 app.use(express.static('public'));
 // routing
-require('./routes/api-routes')(app);
-require('./routes/html-routes')(app);
+require("./routes/apiRoutes")(app);
+require("./routes/htmlRoutes")(app);
 // listen function
 app.listen(PORT, function () {
     console.log('App is listening on PORT ' + PORT);
