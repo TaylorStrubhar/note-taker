@@ -2,7 +2,7 @@ const fs = require('fs');
 const { v4: uuidv4 } = require('uuid');
 
 module.exports = (app) => {
-    app.get('/api/notes', (req, res) => {
+    app.get("/api/notes", (req, res) => {
         fs.readFile('./db/db.json', (err, data) => {
             if (err) throw err;
             res.json(JSON.parse(data));
@@ -23,7 +23,7 @@ module.exports = (app) => {
         });
     });
 // deletes note
-    app.delete('/api/notes/:id', (req, res) => {
+    app.delete("/api/notes/:id", (req, res) => {
         const id = req.params.id;
         fs.readFile('./db/db.json', (err, data) => {
             if (err) throw err;
